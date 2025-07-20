@@ -29,7 +29,7 @@ Toronto officials commissioned a survey to gauge public opinion on a potential c
 - 📈 Modeled casino support using **Multinomial Logistic Regression**
 - 📉 Applied **PCA** to reduce dimensionality from 16 → 2 components
 - 🔍 Conducted **EFA** to extract underlying themes (e.g., safety vs. economy)
-- 📊 Visualized results with `ggplot2` and custom `RMarkdown` reporting
+- 📊 Visualized results with `ggplot2` and custom reporting
 - 👤 Analyzed subgroup sentiment differences (e.g., men vs. women)
 
 ---
@@ -80,9 +80,24 @@ Toronto officials commissioned a survey to gauge public opinion on a potential c
 
 ## 🔮 Predictive Modeling (Multinomial Logistic Regression)
 
+This model provides insights into how various factors influence the likelihood of
+respondents expressing different levels of sentiment, ranging from strong opposition
+to strong favorability.
+
 - Target: Q1_A (public stance)
 - Features: Q3_A to Q3_P (importance of 16 factors)
 - Accuracy: High for extreme stances (Strongly Opposed/Favour); lower for Neutral
+- __Key Findings:__
+>- The analysis identified Q3 N (Tourist Attraction), Q3 L (Revenue for the
+City), Q3 B (Employment Opportunities), and Q3 F (Hotel Accommodations)
+as the most significant predictors of strong support for the casino, with Q3 N
+as the most influential.
+>- The model demonstrated low misclassification rates for extreme sentiment
+categories such as ”Strongly Opposed” and ”Strongly in Favor”. However,
+the misclassification was higher for intermediate categories like ”Neutral” or
+”Mixed Feelings”.
+>- Overall, the model shows good predictive power with clear patterns across
+predictors.
 
 ### Key Predictive Factors:
 - 🏙️ `Q3_N`: Tourist Attraction (**strongest predictor of favorability**)
@@ -103,6 +118,11 @@ Toronto officials commissioned a survey to gauge public opinion on a potential c
 ---
 
 ## 🔍 Exploratory Factor Analysis (EFA)
+To explore the underlying structure of public opinions regarding a new casino in
+Toronto, I performed Exploratory Factor Analysis (EFA) on responses to survey
+questions Q3 A to Q3 P. The aim was to identify the main driving factors influencing
+the population’s perceptions.
+Tests was conducts and it is concluded that the data were suitable for EFA. 
 
 - Used Maximum Likelihood with Varimax rotation
 - Identified **two latent factors**:
@@ -110,9 +130,9 @@ Toronto officials commissioned a survey to gauge public opinion on a potential c
   - **Social Concerns & Public Safety**
 
 ### Gender Analysis:
-- **Males**: Prioritized economic growth
+- **Males**: Prioritized economic growth and development opportunities offered by the casino
 - **Females**: Focused on safety & social concerns
-
+![Fators driven by Gender](figures/gender.png)
 ---
 
 ## ✅ Key Insights
