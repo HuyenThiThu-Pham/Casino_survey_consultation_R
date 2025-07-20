@@ -87,7 +87,7 @@ Factors include:
 ##  Data Exploration
 - Visualized Q1_A to understand sentiment distribution
   ![Feeling toward a proposed casino in Toronto](figures/q1a.png)
-  ![Percentage of ’Very Important’ responses vs. each question](figures/important.png)
+  ![Percentage of ’Very Important’ responses vs. each question](figures/Important.png)
 
 - Explored Q3 responses to identify most cited concerns
 - Disaggregated responses by gender to examine differences
