@@ -22,12 +22,23 @@ Public projects like casinos generate polarized views due to potential social, e
 - Helps develop **targeted communication strategies** addressing major issues (e.g., safety, addiction, urban aesthetics).
 - Provides a **reusable analytics framework** for other community consultations or market research.
 
----
+
+- 
+# **Actions**:  
+- Cleaned and recoded survey data  
+- Built predictive models using multinomial logistic regression and PCA  
+- Conducted EFA to interpret latent opinion factors  
+- Analyzed demographic variations in perception 
 
 ## 📊 Data Source
 
 - **Dataset**: `casino_survey_results20130325.csv`  
 - **Documentation**: `casino_survey_readme.xlsx` (survey question metadata)
+
+###  Data Preparation
+- Selected relevant columns (Q1_A, Q3_A–Q3_P, Gender, Age)
+- Re-coded categorical variables as factors
+- Handled missing values and ensured appropriate factor levels
 
 ### 🎯 Target Variable
 **Q1_A** – *How do you feel about having a new casino in Toronto?*  
@@ -65,36 +76,33 @@ Factors include:
 - Gender  
 - Age (binned; missing values replaced with “Prefer not to disclose”)
 
-### 🧹 Data Cleaning & Imputation
+## 🧹 Data Cleaning & Imputation
 - Missing values for `Q1_A` were imputed with the most frequent response: **Strongly Opposed**
 - Missing values in Q3 responses were replaced with **"Unsure"**
 - Removed free-text and irrelevant demographic fields:  
   `Q1_B1` to `Q1_B3`, `Q2_A/B`, `Q3_Comments`, `Q4_A` to `Q10`, `PostalCode`, `GroupName`, `DateCreated`
 
----
-## 🔍 Methodology
 
-### 1. Data Preparation
-- Selected relevant columns (Q1_A, Q3_A–Q3_P, Gender, Age)
-- Re-coded categorical variables as factors
-- Handled missing values and ensured appropriate factor levels
 
-### 2. Data Exploration
+##  Data Exploration
 - Visualized Q1_A to understand sentiment distribution
+  ![Feeling toward a proposed casino in Toronto](figures/q1a.png)
+  ![Percentage of ’Very Important’ responses vs. each question](figures/important.png)
+
 - Explored Q3 responses to identify most cited concerns
 - Disaggregated responses by gender to examine differences
 
-### 3. Predictive Modeling
+## Predictive Modeling
 - Used **Multinomial Logistic Regression** to predict Q1_A based on Q3 concerns
 - Encoded ordinal target as a factor
 - Evaluated performance by accuracy and class-wise prediction quality
 
-### 4. Dimensionality Reduction with PCA
+## Dimensionality Reduction with PCA
 - Applied PCA to Q3_A to Q3_P responses
 - Selected optimal number of components (e.g., via scree plot)
 - Re-ran logistic regression using PCA components as inputs
 
-### 5. Exploratory Factor Analysis (EFA)
+## Exploratory Factor Analysis (EFA)
 - Tried multiple factor extraction methods (e.g., principal axis, maximum likelihood)
 - Chose the best model based on interpretability and fit indices
 - Interpreted two key latent factors:
@@ -105,17 +113,8 @@ Factors include:
 
 ---
 
-## ✅ Results (STAR Summary)
-
-**Situation**: Toronto sought to gauge public opinion on building a casino, a decision with economic and social implications.  
-**Task**: Predict overall sentiment toward the casino and discover key driving factors behind public attitudes.  
-**Actions**:  
-- Cleaned and recoded survey data  
-- Built predictive models using multinomial logistic regression and PCA  
-- Conducted EFA to interpret latent opinion factors  
-- Analyzed demographic variations in perception  
-
-**Results**:  
+## ✅ Summary
+ 
 - A majority of respondents were **strongly opposed** (66.2%) to the casino  
 - PCA-based model showed similar performance but better interpretability  
 - EFA revealed that:
@@ -139,8 +138,6 @@ Factors include:
 
 ### Author
 
-Huyen
+Huyen Pham
 
-### License
 
-This project is for academic purposes only.
