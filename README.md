@@ -157,7 +157,7 @@ Tests was conducts and it is concluded that the data were suitable for EFA.
 
 ## 👩‍💻 About Me
 
-**Huyen Pham** – Data Analyst passionate about public policy, urban planning, and using data to inform real-world decisions.  
+**Huyen Pham** – Data Professional, passionate about public policy, urban planning, and using data to inform real-world decisions.  
 > *This project demonstrates my ability to clean, model, visualize, and interpret complex public opinion data using R.*
 
 ---
